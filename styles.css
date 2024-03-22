@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+  }
+  
+  .container {
+    position: relative;
+  }
+  
+  .flower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  #flower1 {
+    top: 50px;
+    left: 50px;
+  }
+  
+  #flower2 {
+    top: 50px;
+    right: 50px;
+  }
+  
+  #flower3 {
+    bottom: 50px;
+    left: 50px;
+  }
+  
+  #flower4 {
+    bottom: 50px;
+    right: 50px;
+  }
+  
+  #flower5 {
+    top: 120px;
+    left: 120px;
+  }
+  
+  #flower6 {
+    top: 120px;
+    right: 120px;
+  }
+  
+  #flower7 {
+    bottom: 120px;
+    left: 120px;
+  }
+  
+  #flower8 {
+    bottom: 120px;
+    right: 120px;
+  }
+  
