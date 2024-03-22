@@ -11,5 +11,64 @@
     <canvas id="canvas"></canvas>
   </div>
   <h1 id="dedicado">Flores</h1>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Configuración del canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+   
+
+    
+    // Función para dibujar un pétalo
+
+
+    function dibujarPetalo(x, y, radio, angulo) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.bezierCurveTo(x - radio * Math.sin(angulo - Math.PI / 6), y + radio * Math.cos(angulo - Math.PI / 6),
+                                            x - radio * Math.sin(angulo + Math.PI / 6), y + radio * Math.cos(angulo + Math.PI / 6),
+                                            x, y);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+    }
+
+    // Función para dibujar una flor
+    function dibujarFlor(x, y, radio) {
+        const coloresCentro = ["red", "blue", "green", "orange", "purple"]; // Lista de colores para los centros
+
+        for (let i = 0; i < 6; i++) {
+            dibujarPetalo(x, y, radio, i * Math.PI * 2 / 6);
+
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, radio / 5, 0, Math.PI * 2);
+        ctx.fillStyle = coloresCentro[Math.floor(Math.random() * coloresCentro.length)];
+        ctx.fill();
+    }
+
+
+    // Función para animar las flores
+
+    function animar() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < 100; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const radio = Math.random() * 25 + 30;
+
+            dibujarFlor(x, y, radio);
+        }
+
+  // Reducir el tiempo entre cada llamada a animar() ajustando el segundo parámetro de setTimeout
+        setTimeout(animar, 500); // 100 milisegundos, ajusta este valor según sea necesario
+    }
+
+    animar();
+  </script>
 </body>
 </html>
