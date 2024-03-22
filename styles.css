@@ -22,4 +22,21 @@ body {
     font-size: 36px;
     color: #333;
   }
-  
+  #cita {
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#cita blockquote {
+    border-left: 5px solid #333;
+    padding-left: 10px;
+}
+
+#cita blockquote p {
+    color: #666;
+}
+
+#cita blockquote footer {
+    margin-top: 10px;
+}
